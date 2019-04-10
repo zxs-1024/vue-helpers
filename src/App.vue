@@ -1,26 +1,23 @@
 <template>
   <div id="app">
     <h1>vuex helpers</h1>
-    <h2>User</h2>
-    <User />
-    <h2>Config</h2>
-    <Config />
-    <h2>Permission</h2>
-    <Permission />
+    <div class="panel">
+      <el-button class="panel__button" @click="jumpTopage('user')" type="primary">User</el-button>
+      <el-button class="panel__button" @click="jumpTopage('config')" type="success">Config</el-button>
+      <el-button class="panel__button" @click="jumpTopage('permission')" type="info">Permission</el-button>
+      <el-button class="panel__button" @click="jumpTopage('createNamespaced')" type="warning">Namespaced</el-button>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import User from './components/User.vue'
-import Config from './components/Config.vue'
-import Permission from './components/Permission.vue'
-
 export default {
   name: 'app',
-  components: {
-    User,
-    Config,
-    Permission
+  methods: {
+    jumpTopage(name) {
+      this.$router.push(name)
+    }
   }
 }
 </script>
@@ -32,6 +29,30 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
+}
+.border {
+  border-bottom: 1px dashed #2c3e50;
+}
+.panel {
+  margin-bottom: 40px;
+}
+.panel__button {
+  width: 128.64px;
+}
+pre {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(204, 204, 204, 0.2);
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+pre code {
+  text-align: left;
+  padding: 21px !important;
+  border-radius: 5px;
+  font-family: DankMono, OperatorMono, 'Fira Code';
 }
 </style>

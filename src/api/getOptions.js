@@ -4,22 +4,22 @@
 const _options = {
   STATE: [
     {
-      value: '成功',
-      label: 1
+      value: 1,
+      label: '成功'
     },
     {
-      value: '失败',
-      label: 2
+      value: 2,
+      label: '失败'
     }
   ],
   JOB: [
     {
-      value: '前端',
-      label: 1
+      value: 1,
+      label: '前端程序猿'
     },
     {
-      value: '后端',
-      label: 2
+      value: 2,
+      label: '后端程序猿'
     }
   ]
 }

@@ -12,7 +12,7 @@ const getters = {
 
 // actions
 const actions = {
-  updateOptions ({ commit }) {
+  updateOptions({ commit }) {
     commit('clearOptions')
     getOptions().then(options => commit('setOptions', options))
   }
@@ -20,12 +20,12 @@ const actions = {
 
 // mutations
 const mutations = {
-  setOptions (state, options) {
-    state.options = options
+  setOptions(state, options) {
+    state.options = {...options}
   },
-  clearOptions () {
+  clearOptions() {
     // 这里是为了展示更新效果，不要这样子做哦
-    state.options = '更新中...'
+    state.options = { STATE: '更新中...', JOB: '更新中...' }
   }
 }
 

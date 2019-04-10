@@ -13,8 +13,10 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import { htmlCode, javascriptCode } from '../code/permission'
+import { createNamespacedHelpers } from 'vuex'
+import { htmlCode, javascriptCode } from '../code/createNamespaced'
+
+const { mapGetters, mapActions } = createNamespacedHelpers('permission')
 
 export default {
   data() {
@@ -24,14 +26,14 @@ export default {
     }
   },
 
-  computed: mapGetters('permission', ['permissions']),
+  computed: mapGetters(['permissions']),
 
   // computed: mapState({
-  //   permissions: state => state.permission.permissions
+  //   permissions: state => state.permissions
   // }),
 
   methods: {
-    ...mapActions('permission', ['updatePermissions']),
+    ...mapActions(['updatePermissions']),
 
     checkPermission(permission) {
       return this.permissions.includes(permission)
@@ -40,6 +42,7 @@ export default {
 
   created() {
     this.updatePermissions()
+    // this.$store.dispatch('updatePermissions')
   }
 }
 </script>
