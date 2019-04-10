@@ -29,7 +29,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 30px;
+  width: 800px;
+  margin: 30px auto;
 }
 .border {
   border-bottom: 1px dashed #2c3e50;
@@ -41,9 +42,6 @@ export default {
   width: 128.64px;
 }
 pre {
-  width: 750px;
-  margin-left: auto;
-  margin-right: auto;
   background: rgba(204, 204, 204, 0.2);
   padding: 12px;
   font-size: 14px;
@@ -54,5 +52,9 @@ pre code {
   padding: 21px !important;
   border-radius: 5px;
   font-family: DankMono, OperatorMono, 'Fira Code';
+}
+.text_left {
+  padding-left: 10px;
+  text-align: left;
 }
 </style>

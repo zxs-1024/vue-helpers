@@ -7,39 +7,35 @@
 
     <p>PS：这里使用 disabled 是为了显示效果，在项目可以使用 v-if 指令。</p>
 
+    <p class="text_left">html :</p>
     <pre v-highlightjs="htmlCode"><code class="html"></code></pre>
+
+    <p class="text_left">javascript :</p>
     <pre v-highlightjs="javascriptCode"><code class="javascript"></code></pre>
+
+    <p class="text_left">checkPermissionMixin :</p>
+    <pre v-highlightjs="mixinCode"><code class="javascript"></code></pre>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import { htmlCode, javascriptCode } from '../code/permission'
+import checkPermissionMixin from '../mixins/checkPermissionMixin'
+import { htmlCode, javascriptCode, mixinCode } from '../code/permission'
 
 export default {
+  mixins: [checkPermissionMixin],
+
   data() {
     return {
       htmlCode,
-      javascriptCode
-    }
-  },
-
-  computed: mapGetters('permission', ['permissions']),
-
-  // computed: mapState({
-  //   permissions: state => state.permission.permissions
-  // }),
-
-  methods: {
-    ...mapActions('permission', ['updatePermissions']),
-
-    checkPermission(permission) {
-      return this.permissions.includes(permission)
+      javascriptCode,
+      mixinCode
     }
   },
 
   created() {
     this.updatePermissions()
+    // this.$store.dispatch('permission/updatePermissions')
   }
 }
 </script>

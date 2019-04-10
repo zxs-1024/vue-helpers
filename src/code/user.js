@@ -5,12 +5,10 @@ const htmlCode = `<div>
   </p>
 </div>`
 
-const javascriptCode = `import { mapState, mapActions } from 'vuex'
+const javascriptCode = `import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  computed: mapState({
-    userInfo: state => state.user.userInfo
-  }),
+  computed: mapGetters('user', ['userInfo']),
 
   methods: mapActions('user', ['updateUserInfo']),
 

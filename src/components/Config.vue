@@ -16,13 +16,16 @@
       <el-button type="primary" @click="updateOptions">更新配置</el-button>
     </p>
 
+    <p class="text_left">html :</p>
     <pre v-highlightjs="htmlCode"><code class="html"></code></pre>
+
+    <p class="text_left">javascript :</p>
     <pre v-highlightjs="javascriptCode"><code class="javascript"></code></pre>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 import { htmlCode, javascriptCode } from '../code/config'
 
 export default {
@@ -35,14 +38,17 @@ export default {
     }
   },
 
-  computed: mapState({
-    options: state => state.config.options
-  }),
+  computed: mapGetters('config', ['options']),
+
+  // computed: mapState({
+  //   options: state => state.config.options
+  // }),
 
   methods: mapActions('config', ['updateOptions']),
 
   created() {
     this.updateOptions()
+    // this.$store.dispatch('config/updateOptions')
   }
 }
 </script>

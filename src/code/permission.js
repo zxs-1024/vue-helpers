@@ -5,12 +5,27 @@ const htmlCode = `<div>
   <el-button type="danger" :disabled="!checkPermission('vuex-helpers:permissionsButton:reset')">修改权限</el-button>
 </div>`
 
-const javascriptCode = `import { mapState, mapActions } from 'vuex'
+const javascriptCode = 
+`import checkPermissionMixin from '../mixins/checkPermissionMixin'
 
 export default {
-  computed: mapState({
-    permissions: state => state.permission.permissions
-  }),
+  mixins: [checkPermissionMixin],
+
+  created() {
+    this.updatePermissions()
+    // this.$store.dispatch('permission/updatePermissions')
+  }
+}`
+
+const mixinCode = 
+`import { mapState, mapGetters, mapActions } from 'vuex'
+
+export default {
+  computed: mapGetters('permission', ['permissions']),
+
+  // computed: mapState({
+  //   permissions: state => state.permission.permissions
+  // }),
 
   methods: {
     ...mapActions('permission', ['updatePermissions']),
@@ -18,11 +33,7 @@ export default {
     checkPermission(permission) {
       return this.permissions.includes(permission)
     }
-  },
-
-  created() {
-    this.updatePermissions()
   }
 }`
 
-export { htmlCode, javascriptCode }
+export { htmlCode, javascriptCode, mixinCode }

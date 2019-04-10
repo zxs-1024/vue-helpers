@@ -16,7 +16,7 @@ const htmlCode = `<div>
   </p>
 </div>`
 
-const javascriptCode = `import { mapState, mapActions } from 'vuex'
+const javascriptCode = `import { mapGetters, mapActions } from 'vuex'
 
 export default {
   data() {
@@ -26,10 +26,8 @@ export default {
     }
   },
 
-  computed: mapState({
-    options: state => state.config.options
-  }),
-
+  computed: mapGetters('config', ['options']),
+ 
   methods: mapActions('config', ['updateOptions']),
 
   created() {

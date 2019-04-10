@@ -7,7 +7,10 @@
 
     <p>PS：这里使用 disabled 是为了显示效果，在项目可以使用 v-if 指令。</p>
 
+    <p class="text_left">html :</p>
     <pre v-highlightjs="htmlCode"><code class="html"></code></pre>
+
+    <p class="text_left">javascript :</p>
     <pre v-highlightjs="javascriptCode"><code class="javascript"></code></pre>
   </div>
 </template>
@@ -16,7 +19,7 @@
 import { createNamespacedHelpers } from 'vuex'
 import { htmlCode, javascriptCode } from '../code/createNamespaced'
 
-const { mapGetters, mapActions } = createNamespacedHelpers('permission')
+const { mapState, mapGetters, mapActions } = createNamespacedHelpers('permission')
 
 export default {
   data() {
