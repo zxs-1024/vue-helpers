@@ -1,5 +1,4 @@
-const htmlCode = 
-`<div>
+const htmlCode = `<div>
   <p>{{options.STATE}}</p>
 
   <el-select v-model="state" clearable placeholder="请选择">
@@ -17,8 +16,7 @@ const htmlCode =
   </p>
 </div>`
 
-const javascriptCode = 
-`import { mapState, mapActions } from 'vuex'
+const javascriptCode = `import { mapState, mapActions } from 'vuex'
 
 export default {
   data() {

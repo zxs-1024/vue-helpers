@@ -21,7 +21,7 @@ const actions = {
 // mutations
 const mutations = {
   setOptions(state, options) {
-    state.options = {...options}
+    state.options = { ...options }
   },
   clearOptions() {
     // 这里是为了展示更新效果，不要这样子做哦
