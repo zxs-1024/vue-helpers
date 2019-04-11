@@ -1,7 +1,9 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   configureWebpack: config => {
-    config.plugins = [...config.plugins, new BundleAnalyzerPlugin()]
+    if (isProduction)
+      config.plugins = [...config.plugins, new BundleAnalyzerPlugin()]
   }
 }
