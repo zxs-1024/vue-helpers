@@ -7,7 +7,12 @@ const router = new VueRouter({
   routes: [
     {
       path: '',
-      redirect: '/user'
+      redirect: '/store'
+    },
+    {
+      path: '/store',
+      name: 'store',
+      component: () => import('./components/Store.vue')
     },
     {
       path: '/user',

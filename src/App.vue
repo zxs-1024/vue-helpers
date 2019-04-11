@@ -2,6 +2,7 @@
   <div id="app">
     <h1>vuex helpers</h1>
     <div class="panel">
+      <el-button class="panel__button" @click="jumpTopage('store')" type="primary">Store</el-button>
       <el-button class="panel__button" @click="jumpTopage('user')" type="primary">User</el-button>
       <el-button class="panel__button" @click="jumpTopage('config')" type="success">Config</el-button>
       <el-button class="panel__button" @click="jumpTopage('permission')" type="info">Permission</el-button>
@@ -53,7 +54,9 @@ pre code {
   border-radius: 5px;
   font-family: DankMono, OperatorMono, 'Fira Code';
 }
-.text_left {
+.sub_head {
+  font-size: 16px;
+  font-weight: 600;
   padding-left: 10px;
   text-align: left;
 }

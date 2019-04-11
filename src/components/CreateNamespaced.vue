@@ -7,10 +7,10 @@
 
     <p>PS：这里使用 disabled 是为了显示效果，在项目可以使用 v-if 指令。</p>
 
-    <p class="text_left">html :</p>
+    <p class="sub_head">html :</p>
     <pre v-highlightjs="htmlCode"><code class="html"></code></pre>
 
-    <p class="text_left">javascript :</p>
+    <p class="sub_head">javascript :</p>
     <pre v-highlightjs="javascriptCode"><code class="javascript"></code></pre>
   </div>
 </template>

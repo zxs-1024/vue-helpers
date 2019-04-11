@@ -5,10 +5,10 @@
       <el-button type="primary" @click="updateUserInfo">更新用户信息</el-button>
     </p>
 
-    <p class="text_left">html :</p>
+    <p class="sub_head">html :</p>
     <pre v-highlightjs="htmlCode"><code class="html"></code></pre>
 
-    <p class="text_left">javascript :</p>
+    <p class="sub_head">javascript :</p>
     <pre v-highlightjs="javascriptCode"><code class="javascript"></code></pre>
   </div>
 </template>

@@ -1,3 +1,5 @@
+[vue-helpers Example](https://zhanghao-zhoushan.github.io/vue-helpers/dist/index.html)
+
 当我们组件大型应用的时候，可以将 Vuex 相关代码分割到模块中。下面是项目结构示例：
 
 ```bash
