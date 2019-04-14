@@ -44,7 +44,6 @@ const getters = {
 // actions
 const actions = {
   updateUserInfo ({ commit }) {
-    commit('clearUserInfo')
     getUserInfo().then(userInfo => commit('setUserInfo', userInfo))
   }
 }
@@ -53,10 +52,6 @@ const actions = {
 const mutations = {
   setUserInfo (state, userInfo) {
     state.userInfo = userInfo
-  },
-  clearUserInfo () {
-    // 这里是为了展示更新效果，不要这样子做哦
-    state.userInfo = '更新中...'
   }
 }
 
@@ -84,7 +79,6 @@ const getters = {
 // actions
 const actions = {
   updateOptions({ commit }) {
-    commit('clearOptions')
     getOptions().then(options => commit('setOptions', options))
   }
 }
@@ -93,10 +87,6 @@ const actions = {
 const mutations = {
   setOptions(state, options) {
     state.options = { ...options }
-  },
-  clearOptions() {
-    // 这里是为了展示更新效果，不要这样子做哦
-    state.options = { STATE: '更新中...', JOB: '更新中...' }
   }
 }
 
@@ -124,7 +114,6 @@ const getters = {
 // actions
 const actions = {
   updatePermissions ({ commit }) {
-    commit('clearPermissions')
     getPermissions().then(permissions => commit('setPermissions', permissions))
   }
 }
@@ -133,10 +122,6 @@ const actions = {
 const mutations = {
   setPermissions (state, permissions) {
     state.permissions = permissions
-  },
-  clearPermissions () {
-    // 这里是为了展示更新效果，不要这样子做哦
-    state.permissions = '更新中...'
   }
 }
 
