@@ -6,7 +6,6 @@ const htmlCode = `<div>
 </div>`
 
 const javascriptCode = `import { createNamespacedHelpers } from 'vuex'
-import { htmlCode, javascriptCode } from '../code/createNamespaced'
 
 const { mapState, mapActions } = createNamespacedHelpers('permission')
 
